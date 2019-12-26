@@ -1,5 +1,5 @@
 # 双指针法,从两边向中间逼近     
-# 关联题目： 1-two-sum
+# 关联题目： 1-two-sum，使用哈希表
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
