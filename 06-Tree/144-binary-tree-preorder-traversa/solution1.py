@@ -22,4 +22,3 @@ class Solution:
             if node.left:
                 stack.append(node.left)
         return res
-        

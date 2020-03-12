@@ -1,5 +1,5 @@
-# 双指针法,从两边向中间逼近     
-# 关联题目： 1-two-sum，使用哈希表
+# 难点在于：如何去除重复解
+# 双指针法,从两边向中间逼近
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -9,11 +9,15 @@ class Solution:
         n = len(nums)
         res = []
 
-        for i in range(n - 2):                                  
+        for i in range(n - 2): 
+            # 与后面的两个元素相加不可能为0                               
             if nums[i] > 0:
                 break
+
+            # 跳过重复元素，避免重复解
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
+
             l, r = i + 1, len(nums) - 1
             while l < r:
                 s = nums[i] + nums[l] + nums[r]
@@ -35,37 +39,37 @@ class Solution:
 
 
         # 写法二：
-        nums.sort()
+        # nums.sort()
         
-        n = len(nums)
-        res, k = [], 0
+        # n = len(nums)
+        # res, k = [], 0
 
-        for k in range(n - 2):
-            if nums[k] > 0:
-                break
-            if k > 0 and nums[k] == nums[k - 1]:
-                continue
+        # for k in range(n - 2):
+        #     if nums[k] > 0:
+        #         break
+        #     if k > 0 and nums[k] == nums[k - 1]:
+        #         continue
 
-            i, j = k + 1, len(nums - 1)
-            while i < j:
-                s = nums[i] + nums[j] + nums[k]
-                if s < 0:
-                    i += 1
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
-                elif s > 0:
-                    j -= 1
-                    while i < j and nums[j] == nums[j + 1]:
-                        j -= 1
-                else:
-                    res.append([nums[i], nums[j], nums[k]])
-                    i += 1
-                    j -= 1
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
-                    while i < j and nums[j] == nums[j + 1]:
-                        j -= 1
-        return res
+        #     i, j = k + 1, len(nums) - 1
+        #     while i < j:
+        #         s = nums[i] + nums[j] + nums[k]
+        #         if s < 0:
+        #             i += 1
+        #             while i < j and nums[i] == nums[i - 1]:
+        #                 i += 1
+        #         elif s > 0:
+        #             j -= 1
+        #             while i < j and nums[j] == nums[j + 1]:
+        #                 j -= 1
+        #         else:
+        #             res.append([nums[i], nums[j], nums[k]])
+        #             i += 1
+        #             j -= 1
+        #             while i < j and nums[i] == nums[i - 1]:
+        #                 i += 1
+        #             while i < j and nums[j] == nums[j + 1]:
+        #                 j -= 1
+        # return res
 
 
 

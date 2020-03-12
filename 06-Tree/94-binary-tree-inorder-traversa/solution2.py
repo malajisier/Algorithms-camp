@@ -14,7 +14,7 @@ class Solution:
         p = root
 
         while p or stack:
-            # 将左子树压入栈中，最后p指向null，循环停止
+            # 先将左儿子全部压入栈中，最后p指向null，循环停止
             while p:
                 stack.append(p)
                 p = p.left
@@ -26,3 +26,5 @@ class Solution:
             p = p.right
         
         return res
+
+            
