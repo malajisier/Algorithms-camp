@@ -22,6 +22,8 @@ class Solution:
         result = []
 
         for i in range(len(nums)):
+            # 左边界出滑动窗,只有1种情况需要考虑，左边界是上轮循环的滑动窗口的最大值
+            # 当元素从左边界滑出时，如果它恰好是滑动窗口的最大值，则将其弹出
             if i >= k and i - k == deq[0]:
                 deq.popleft()
 
@@ -29,8 +31,27 @@ class Solution:
             while deq and nums[i] >= nums[deq[-1]]:
                 deq.pop()
             deq.append(i)
-
+            # 队首一定是滑动窗口的最大值的索引
             if i >= k - 1:
                 result.append(nums[deq[0]])
 
         return result
+
+
+# 另一种写法
+# class Solution:
+#     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+#         deq = collections.deque()
+#         res = []
+
+#         for i, num in enumerate(nums):
+#             while deq and deq[0] <= i - k: deq.popleft()
+#             while deq and num > nums[deq[-1]]: deq.pop()
+#             deq.append(i)
+
+#             if i >= k - 1:
+#                 res.append(nums[deq[0]])
+
+        
+#         return res
+       
