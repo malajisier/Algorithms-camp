@@ -19,6 +19,8 @@ class Solution:
             # 先放入右节点，因为栈先入后出的特点
             if node.right:
                 stack.append(node.right)
+            
+            # 先输出左结点
             if node.left:
                 stack.append(node.left)
         return res
