@@ -15,14 +15,20 @@ class Solution:
         cur = [root]
 
         while cur:
-            next = []
+            next_lev = []
             tmp = []
 
+            # 1.添加当前层结点的值  2.添加结点的儿子到下一层
             for node in cur:
                 tmp.append(node.val)
-                next += node.children
+
+                # 后者写法性能更好
+                next_lev += node.children
+                # for child in node.children:
+                #     next_lev.append(child)
+                    
             
             res.append(tmp)
-            cur = next
+            cur = next_lev
         
         return res

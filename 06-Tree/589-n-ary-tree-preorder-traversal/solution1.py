@@ -5,28 +5,19 @@ class Node:
         self.val = val
         self.children = children
 """
+# 迭代法
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        # if not root:
-        #     return []
-
-        # stack, res = [root,], []
-
-        # while stack:
-        #     node = stack.pop()
-        #     res.append(node.val)
-        #     stack.extend(root.children[::-1])
-
-        # return res
-
-        # 迭代法
-        if root is None:
+        if not root:
             return []
-        
-        stack, output = [root, ], []            
+
+        stack, res = [root,], []
+
         while stack:
-            root = stack.pop()
-            output.append(root.val)
+            node = stack.pop()
+            res.append(node.val)
+            # 子节点，倒序推入栈中
+            # extend()在列表末尾一次性追加，另一个序列的多个值
             stack.extend(root.children[::-1])
-                
-        return output
+
+        return res

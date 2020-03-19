@@ -5,12 +5,16 @@
 #         self.left = None
 #         self.right = None
 
+# 递归的DFS
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        # 递归法  
+         
         if root is None:
             return 0
         else:
             left_height = self.maxDepth(root.left)
             right_height = self.maxDepth(root.right)
             return max(left_height, right_height) + 1
+        
+        # C++
+        # return (root == NULL)? 0 : max(maxDepth(root->left), maxDepth(root->right)) + 1

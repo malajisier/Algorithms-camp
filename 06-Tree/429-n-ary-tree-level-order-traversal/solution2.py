@@ -7,7 +7,7 @@ class Node:
 """
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
-        # 递归法
+        # 递归法，与二叉树的层次遍历类似
         def travel_node(node, level):
             if len(res) == level:
                 res.append([])
