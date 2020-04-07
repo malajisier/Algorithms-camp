@@ -1,5 +1,5 @@
+# 两种方法都属于计数排序
 # 法一：比较排序后的俩字符串是否相等
-# 法二：使用哈希表
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
