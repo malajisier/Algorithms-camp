@@ -39,10 +39,63 @@
 （1）快速排序-递归思想         
 数组取标杆pivot，小于pivot的元素放在其左侧，大于pivot的元素放在其右侧，然后依次对右边和右边的子数组继续快排          
 
+**快排Java模板**    
+```Java
+public static void quickSort(int[] array, int begin, int end) {
+    if (end <= start>)
+        return;
+    int pivot = partition(array, begin, end);
+    quickSort(array, begin, pivot - 1);
+    quickSort(array, begin, pivot + 1);
+} 
+
+static int partition(int[] a, int begin, int end) {
+    int pivot = end, cnt = begin;
+    for (int i = begin; i < end; i++) {
+        if (a[i] < a[pivot]) {
+            int temp = a[cnt]; a[cnt] = a[i]; a[i] = temp;
+        }
+    }
+    int temp = a[pivot]; a[pivot] = a[cnt]; a[cnt] = temp;
+    return cnt;
+}
+```
+
 （2）归并排序-分治
 - 把长度为n的输入序列分成两个长度为n/2的子序列
 - 对这两个子序列分别采用归并排序
-- 将两个排序好的子序列合并一个最终的排序序列          
+- 将两个排序好的子序列合并一个最终的排序序列       
+
+```Java
+public static void mergeSort(int[] array, int left, int right) {
+    if (end <= start>)
+        return;
+    int mid = (left + right) / 2;
+    mergeSort(array, left, mid);
+    mergeSort(array, mid + 1, right);
+    merge(array, left, mid, right);
+}
+
+public static void merge(int[] array, int left, int mid, int right) {
+    int[] temp = new int[right - left + 1];
+    int i = left, j = mid + 1, k = 0;
+
+    while (i <= mid && j <= right) {
+        temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
+    }
+    while (i < mid)
+        temp[k++] = arr[i++];
+    while (j <= right)
+        temp[k++] = arr[j++];
+    
+    for (int p = 0; p < temp.length; p++) {
+        arr[left + p] = temp[p];
+    }
+
+}
+
+```
+
 
 （3）堆排序 - 堆插入O(logn)，取最大/最小值O(1) 
 - 数组元素依次建立小顶堆
