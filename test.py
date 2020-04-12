@@ -1,11 +1,6 @@
-
-        if not digits: return []
-        ls1 = ['']
-        for i in digits:
-            ls1 = [x + y for x in ls1 for y in m[i]]
-            print(ls1)
-        return ls1
-
-if __name__ == "__main__":
-    digits = '23'
-    print(Solution().letterCombinations(digits))
+import collections
+a = [2, 1, 3, 4, 6, 6, 1, 1, 2]
+b = collections.Counter(a)
+print(b, len(b))
+print(b.pop(1))
+print(b)

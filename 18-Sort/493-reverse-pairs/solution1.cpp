@@ -45,7 +45,7 @@ public:
 //     int mergeSort(vector<int>& arr, int start, int end) {
 //         if (start < end) {
 //             int mid = (start + end) / 2;
-//             int count = mergeSort(arr, start, mid) + mergeSort(arr, mid + 1, end);
+//             int count = mergeSort(arr, start, mi) + mergeSort(arr, mid + 1, end);
 
 //             int j = mid + 1;
 //             for (int i = start; i<= mid; i++) {
