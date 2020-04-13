@@ -1,27 +1,27 @@
-# mergesort，简洁的py版本
+# mergesort，简洁的py版本1，推荐
+# 两个py版本的merge，都借助了系统的sort，严格的TC：logn*nlogn
 
 class Solution(object):
     def reversePairs(self, nums: List[int]) -> int:
-        self.res = 0
-        self.mergeSort(nums)
-        return self.res
+        def mergeSort(low, high):
+            if low + 1 >= high:
+                return 0
+            
+            mid = (low + high) // 2
+            cnt = mergeSort(low, mid) + mergeSort(mid, high)
 
-    def mergeSort(self, nums):
-        n = len(nums)
-        if n <= 1:
-            return nums
-        
-        mid = n // 2
-        return self.merge(self.mergeSort(nums[:mid]), self.mergeSort(nums[mid:]))
+            j = mid
+            for i in nums[low: mid]:
+                while j < high and i > 2 * nums[j]:
+                    j += 1
+                cnt += j - mid
 
-    def merge(self, left, right):
-        l, r = len(left), len(right)
-        i, j = 0, 0
+            nums[low: high] = sorted(nums[low: high])
+            return cnt
 
-        while i < l and j < r:
-            if left[i] > 2 * right[j]:
-                self.res += l - i
-                j += 1
-            else:
-                i += 1
-        return sorted(left + right)
+        return mergeSort(0, len(nums))
+
+
+
+
+
