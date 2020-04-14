@@ -5,4 +5,4 @@ class Solution:
         #     max = max * 10 + 9
         #     n -= 1
         
-        return [i for i in range(1, 10 ** n)]
+        return [i for i in range(1, 10 ** n)

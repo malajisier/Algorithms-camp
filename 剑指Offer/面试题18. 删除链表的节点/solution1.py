@@ -19,7 +19,7 @@ class Solution:
             head = head.next
         return dummy.next
 
-
+        
 # 输入为整个链表时，对应剑指offer的情况：
 # 待删除节点是最后一个时，TC=O(n)，总的平均复杂度O(1), SC:O(1)
 

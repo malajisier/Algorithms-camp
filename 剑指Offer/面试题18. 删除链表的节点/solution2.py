@@ -18,3 +18,12 @@ class Solution:
             second = second.next
 
         return dummy.next
+
+        dummy.next = head
+        first = dummy
+        sec = dummy.next
+
+        while True:
+            if sec.val == val:
+                
+ 
