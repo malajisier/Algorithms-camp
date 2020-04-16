@@ -14,6 +14,7 @@
 # 若 nums[i] == i ： 说明此数字已在对应索引位置，无需交换，因此执行 i += 1 与 continue ；
 # 若 nums[nums[i]] == nums[i] ： 说明索引 nums[i] 处的元素值也为 nums[i]，即找到一组相同值，返回此值 nums[i]；
 # 否则： 当前数字是第一次遇到，因此交换索引为 i 和 nums[i] 的元素值，将此数字交换至对应索引位置。
+# TC:O(N), SC:O(N)
 
 class Solution:
     def findRepeatNumber(self, nums: List[int]) -> int:
@@ -30,3 +31,16 @@ class Solution:
             nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
         
         return -1
+
+# TC:O(N), SC:O(1)
+# class Solution:
+#     def findRepeatNumber(self, nums: List[int]) -> int:
+#         n = len(nums)
+
+#         for i in range(n):
+#             while i != nums[i] and nums[nums[i]] != nums[i]:
+#                 nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+#             if nums[i] != i and nums[nums[i]] == nums[i]:
+#                 return nums[i]
+        
+#         return -1
