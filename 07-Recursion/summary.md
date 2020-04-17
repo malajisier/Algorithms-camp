@@ -23,7 +23,11 @@ def recursion(level, param1, param2):
 
     # 下探到下一层
     self.recursion(level + 1, p1, ...)
-```
+```        
+
+### key1: 二叉树的重建     
+根据前中后序的任意两个构建二叉树，需要深刻理解每种遍历方式的特点           
+参考题目105， 106，剑指offer-面试题07
 
 
 

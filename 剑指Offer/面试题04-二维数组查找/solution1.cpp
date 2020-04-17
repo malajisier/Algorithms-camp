@@ -1,15 +1,7 @@
 class Solution {
 public:
-    bool searchArray(vector<vector<int>> array, int target) {
-        if (array.empty() || array[0].empty()) return False;
-
-        int i = 0, j = array[0].size();
-        while (i <= array.size() and j >= 0) {
-            if (array[i][j]) return true;
-            if (array[i][j] < target) i ++;
-            else j --;
-        }
-
-        return false;
+    bool findNumberIn2DArray(vector<vector<int>>& matrix, int target) {
+        if (matrix.empty() || matrix[0].empty()) return false;
+        
     }
 }
