@@ -15,8 +15,7 @@ class Solution:
         #     for subset in res:
         #         newsub = subset + [num]
         #         newsets.append(newsub)
-        #     res.extend(newsets)
-        
+        #     res.extend(newsets)                          
         # return res
                                                                                                                             
 

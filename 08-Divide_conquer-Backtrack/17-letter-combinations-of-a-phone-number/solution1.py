@@ -1,4 +1,4 @@
-# pythonic 解法
+# pythonic 解法，非常的巧妙简洁
 
 class Solution:
     def letterCombinations(self, digits: str):
