@@ -1,26 +1,7 @@
-# 递归实现
+# 回溯实现
+
 class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        def search(s, digits, level, res, lookup):
-            # terminator
-            if level == n:
-                res.append(s)
-                return
-            
-            # 取出digits每层数字对应的str
-            letters = lookup.get(digits[level])
-
-            # 遍历str
-            for i in range(len(letters)):
-                # 下探到下一层
-                search(s + letters[i], digits, level + 1, res, lookup)
-
-
-        n = len(digits)
-        if digits == None or n == 0: 
-            return []
-
-        lookup = {
+    lookup = {
             "2":"abc",
             "3":"def",
             "4":"ghi",
@@ -31,6 +12,20 @@ class Solution:
             "9":"wxyz"
         }
 
+    def dfs(self, i, digits, res, tmp):
+        if i == len(digits):
+            res.append(''.join(tmp))
+            return
+        
+        for s in self.lookup[digits[i]]:
+            tmp.append(s)
+            self.dfs(i + 1, digits, res, tmp)
+            tmp.pop()
+
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits: return []
+    
         res = []
-        search("", digits, 0, res, lookup)
+        tmp = []
+        self.dfs(0, digits, res, tmp)
         return res
