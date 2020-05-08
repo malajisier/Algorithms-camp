@@ -1,0 +1,19 @@
+# 贪心问题，优先满足胃口小的小朋友
+
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        g.sort(), s.sort()
+        g_length, s_length = len(g), len(s)
+
+        res = 0
+        i, j = 0, 0
+
+        while i < g_length and j < s_length:
+            if g[i] <= s[j]:
+                res += 1
+                i += 1
+                j += 1
+            else:
+                j += 1
+        
+        return res
