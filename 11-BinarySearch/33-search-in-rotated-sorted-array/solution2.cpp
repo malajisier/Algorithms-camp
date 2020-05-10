@@ -17,7 +17,6 @@ public:
             else
                 r = mid;
         }
-
         return l == r && nums[l] == target ? l : -1;
     }
 };

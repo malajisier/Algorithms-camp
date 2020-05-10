@@ -1,4 +1,8 @@
 # https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14437/Python-binary-search-solution-O(logn)-48ms
+# 重点：判断mid分割出的两部分哪个有序，根据有序的一部分来判断target的位置
+# 如果 [l, mid - 1] 是有序数组，且 target 的大小满足 ([nums[l],nums[mid])，则我们应该将搜索范围缩小至 [l, mid - 1]，否则在 [mid + 1, r] 中寻找。
+# 如果 [mid, r] 是有序数组，且 target 的大小满足 (nums[mid+1],nums[r]])，则我们应该将搜索范围缩小至 [mid + 1, r]，否则在 [l, mid - 1] 中寻找
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -13,9 +17,8 @@ class Solution:
             if nums[mid] == target:
                 return mid
 
-            # 等号：只有俩元素并且相等时
             if nums[l] <= nums[mid]:
-                if nums[l] <= target <= nums[mid]:
+                if nums[l] <= target <= nums[mid]: 
                     r = mid - 1
                 else:
                     l = mid + 1
@@ -26,6 +29,8 @@ class Solution:
                     r = mid - 1
 
         return -1
+
+
 
 # 一种解释：
 # 如果 target 在[mid+1,high] 序列中，则low = mid+1,否则 high = mid,关键是如何判断 target在[mid+1,high]序列中,具体判断如下：
