@@ -1,3 +1,5 @@
+# 自底向上的动态规划
+
 # class Solution:
     # def minimumTotal(self, triangle: List[List[int]]) -> int:
     #     f = [0] * (len(triangle) + 1)
