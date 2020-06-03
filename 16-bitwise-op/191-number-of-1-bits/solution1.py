@@ -1,5 +1,5 @@
 # 位运算技巧 x&(x-1)：清零最低位的1    
-# TC:O(1), SC:O(1)
+# TC:O(1), 最坏32，  SC:O(1)
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
