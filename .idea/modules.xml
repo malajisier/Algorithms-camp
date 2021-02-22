@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/20-String/01-basic/01-basic.iml" filepath="$PROJECT_DIR$/20-String/01-basic/01-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20-String/02-string-op/02-string-op.iml" filepath="$PROJECT_DIR$/20-String/02-string-op/02-string-op.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03-Array-Linkedlist/03-Array-Linkedlist.iml" filepath="$PROJECT_DIR$/03-Array-Linkedlist/03-Array-Linkedlist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20-String/03-anagrams/03-anagrams.iml" filepath="$PROJECT_DIR$/20-String/03-anagrams/03-anagrams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-Tree/06-Tree.iml" filepath="$PROJECT_DIR$/06-Tree/06-Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-BinarySearch/11-BinarySearch.iml" filepath="$PROJECT_DIR$/11-BinarySearch/11-BinarySearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-Dynamic-Programming/12-Dynamic-Programming.iml" filepath="$PROJECT_DIR$/12-Dynamic-Programming/12-Dynamic-Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13-Tire-DSU/13-Tire-DSU.iml" filepath="$PROJECT_DIR$/13-Tire-DSU/13-Tire-DSU.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14-Advanced-Search/14-Advanced-Search.iml" filepath="$PROJECT_DIR$/14-Advanced-Search/14-Advanced-Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18-Sort/18-Sort.iml" filepath="$PROJECT_DIR$/18-Sort/18-Sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Algorithms-camp.iml" filepath="$PROJECT_DIR$/.idea/Algorithms-camp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-Dynamic-Programming/house-robber/house-robber.iml" filepath="$PROJECT_DIR$/12-Dynamic-Programming/house-robber/house-robber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-Dynamic-Programming/sellstock-serials/sellstock-serials.iml" filepath="$PROJECT_DIR$/12-Dynamic-Programming/sellstock-serials/sellstock-serials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-Dynamic-Programming/unique-path/unique-path.iml" filepath="$PROJECT_DIR$/12-Dynamic-Programming/unique-path/unique-path.iml" />
+      <module fileurl="file://$PROJECT_DIR$/剑指Offer/剑指Offer.iml" filepath="$PROJECT_DIR$/剑指Offer/剑指Offer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13-Tire-DSU/并查集/并查集.iml" filepath="$PROJECT_DIR$/13-Tire-DSU/并查集/并查集.iml" />
+    </modules>
+  </component>
+</project>

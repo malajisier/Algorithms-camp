@@ -5,7 +5,8 @@
 - 不同点：DP中的最优子结构，并且中途可以淘汰次优解
 
 ### 关键点：
-- 1.最优子结构，optimal = best_of(opt[n - 1], opt[n - 2])
+- 1.最优子结构
+  - optimal = best_of(opt[n - 1], opt[n - 2])
 - 2.存储中间状态：opt[i]
 - 3.递推公式（状态转移方程 或 DP方程）
   - 斐波那契数列： opt[i] = opt[n - 1] + opt[n - 2]
