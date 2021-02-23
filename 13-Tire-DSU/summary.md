@@ -10,13 +10,18 @@ https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/shi-xian-tr
 - 每个节点的所有子节点路径代表的字符都不相同         
 
 
+
+
+
+
 ## 2.并查集    
 （1）适用场景：组团、配对问题        
 （2）基本操作：
 - makeSet(s): 建立一个新的并查集，包含s个元素
 - unionSet(x, y): 如果x、y所在集合不相交，把元素x、y所在集合合并，否则不合并
 - find(x): 找到元素x所在集合代表，该操作可用来判断两个元素是否位于同一集合     
-   
+  
+
 （3）典型题目        
 岛屿数量、朋友圈       
 
@@ -55,7 +60,7 @@ class UnionFind {
         count--;
     }
 }       
-```     
+```
 
 - Python模板      
 ```Python
@@ -85,4 +90,4 @@ def parent(self, p, i):
 
 
 
-    
+​    
