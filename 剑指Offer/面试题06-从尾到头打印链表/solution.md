@@ -1,0 +1,54 @@
+### 法一：辅助栈
+TC:O(n), SC:O(n)
+
+```python
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        stack = []
+
+        while head:
+            stack.append(head.val)
+            head = head.next
+        
+        # 直接返回倒序数组
+        return stack[::-1]
+```
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int[] reversePrint(ListNode head) {
+        Stack<ListNode> s = new Stack<>();
+        ListNode cur = head;
+        while (cur != null) {
+            s.push(cur);
+            cur = cur.next;
+        }
+
+        int length = s.size();
+        int[] out = new int[length];
+        for (int i = 0; i < length; i++) {
+            out[i] = s.pop().val;
+        }
+        return out;
+    }
+}
+```  
+
+
+### 法二：递归法：
+（1）递归阶段：每次传入 head.next ，以 head == None（即走过链表尾部节点）为递归终止条件，此时返回空列表 [] 。
+（2）回溯阶段： 利用 Python 语言特性，递归回溯时每次返回 当前 list + 当前节点值 [head.val] ，即可实现节点的倒序输出
+
+TC:O(n),  SC:O(n)
+
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        return self.reversePrint(head.next) + [head.val] if head else []
