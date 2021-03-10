@@ -26,7 +26,6 @@ class Solution {
         if (carry == 1) {
             cur.next = new ListNode(carry);
         }
-
         return pre.next;
     }
 }
