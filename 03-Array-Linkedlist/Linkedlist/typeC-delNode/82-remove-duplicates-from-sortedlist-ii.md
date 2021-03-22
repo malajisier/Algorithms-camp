@@ -1,5 +1,5 @@
-### 法一：
 
+### 法一：
 ```java
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
@@ -24,8 +24,8 @@ class Solution {
 }
 ```
 
-### 法二：递归实现    
 
+### 法二：递归实现    
 ```java
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
