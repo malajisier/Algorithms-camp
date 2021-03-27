@@ -1,4 +1,3 @@
-
 ```python
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -12,18 +11,17 @@ class Solution:
         
         res = None
         carry = 0
-        while s1 or s2 or carry != 0:
-            a = s1.pop() if s1 else 0
-            b = s2.pop() if s2 else 0
-
-            s = a + b + carry
-            carry =  s // 10
-            # 余数 是当前为计算后的结果
-            remainder = s % 10
-
-            # 头插法，res作为dummy 再指向新节点
-            node = ListNode(remainder)
+        while s1 or s2 or carry:
+            x = 0 if not s1 else s1.pop()
+            y = 0 if not s2 else s2.pop()
+            s = x + y + carry
+            carry = s // 10
+            s %= 10
+            node = ListNode(s)
             node.next = res
             res = node
+        
         return res
+
+
 ```
