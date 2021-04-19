@@ -9,22 +9,10 @@
 
 
 
-
-
-
-
-
+### 法一：自顶向下，递归实现     
+- TC:O(nlogn)
+- SC:O(logn)，递归栈的空间是 logn
 ```java
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
     public ListNode sortList(ListNode head) {
         return head == null ? null : mergeSort(head);
@@ -61,4 +49,13 @@ class Solution {
         return dummy.next;
     }
 }
-```
+```    
+
+
+### 法二：自底向上，迭代实现
+- 时间复杂度：依然是归并的O(nlogn)
+- 空间复杂度：O(1)，直接操作链表，避免了使用递归栈   
+    
+
+                                    
+

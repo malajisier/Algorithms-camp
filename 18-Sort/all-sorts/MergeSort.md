@@ -1,12 +1,17 @@
-归并排序（分治） 
+归并排序（分治）       
 过程：
 - 把长度为n的输入序列分成两个长度为n/2的子序列
 - 对这两个子序列分别采用归并排序
 - 将两个排序好的子序列合并一个最终的排序序列   
 
+
+
+
+（1）实现一：自顶向下    
 复杂度：
 - 时间复杂度均为O(nlogn)
-- 自顶向下，使用数组时，空间复杂度是 O(n+logn), logn: 调用系统栈的深度
+- 自顶向下，使用数组时，空间复杂度是 O(n+logn), logn: 调用系统栈的深度    
+
 
 ```java
 public class MergeSort {
@@ -37,4 +42,52 @@ public class MergeSort {
         }
     }
 }
+```   
+
+（2）自底向上  
+复杂度：
+- 时间复杂度均为O(nlogn)
+- 空间复杂度是 O(n), 使用了数组，但使用链表可以降到 O(1)，参考lc148    
+
+```java
+package com.wes.sort;
+import java.util.Arrays;
+
+// 自底向上的归并排序
+public class MergeSortBU {
+    public static void mergeSortBU(int[] arr, int n) {
+        // 从最下面一层到顶，每一轮 归并区间里的个数：1，2，4...
+        for (int sz = 1; sz <= n; sz += sz) {
+            // 每一次归并的区间：每隔两个size归并一次，i的范围:i < n，但左侧边界限制：i+size < n
+            for (int i = 0; i + sz < n; i += 2*sz) {
+                // 归并的前提是两个区间都存在，右侧边界限制: min(区间右边界，arr右边界)
+                 merge(arr, i, i + sz - 1, Math.min(i + 2*sz - 1, n - 1));
+            }
+        }
+    }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int i = left, j = mid + 1;
+        int[] aux = new int[right - left + 1];
+
+        int p = 0;
+        while (i <= mid && j <= right) {
+            if (arr[i] <= arr[j]) aux[p++] = arr[i++];
+            else aux[p++] = arr[j++];
+        }
+        while (i <= mid) aux[p++] = arr[i++];
+        while (j <= right) aux[p++] = arr[j++];
+
+        for (int p1 = left, p2 = 0; p2 < aux.length; p1++, p2++) {
+            arr[p1] = aux[p2];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {7,5, 6, 4,6,2,0,1,1,7};
+        mergeSortBU(nums, nums.length);
+        System.out.println(Arrays.toString(nums));
+    }
+}
 ```
+
