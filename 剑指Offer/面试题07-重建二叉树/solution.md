@@ -13,6 +13,7 @@ https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/solution/mian-shi-ti
 ```python
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        # 根节点位置，左右范围
         def recur(root, left, right):
             # 递归终止条件，说明已经越过叶子节点
             if left > right: return 
@@ -25,7 +26,7 @@ class Solution:
             node.left = recur(root + 1, left, idx - 1)
             # 右子树递归
             # 右子树的根：前序遍历中右子树的第一个，即当前根节点+左子树长度+1：root+ idx-left + 1
-            node.right = recur(idx - left + root + 1, idx + 1, right)
+            node.right = recur(root + idx-left + 1, idx + 1, right)
             return node
 
         dic, preorder = {}, preorder
