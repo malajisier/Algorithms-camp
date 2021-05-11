@@ -5,7 +5,6 @@ class MyStack {
     public MyStack() {
         queue = new LinkedList<Integer>();
     }
-    
 
     public void push(int x) {
         int n  = queue.size();
