@@ -14,7 +14,7 @@ class Solution {
             cur = next;
         }
     }
-}    
+}      
 ```  
 
 ```Python
@@ -43,6 +43,7 @@ keys:
 ```python
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
+        # 终止条件
         if head == None or head.next == None:
             return head
 

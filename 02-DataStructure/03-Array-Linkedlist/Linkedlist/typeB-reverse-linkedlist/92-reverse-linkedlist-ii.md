@@ -1,4 +1,5 @@
-### 法一：双指针，找到要翻转的链表，翻转后再拼接
+### 法一：双指针，找到要翻转的链表，翻转后再拼接   
+
 ```java
 class Solution {
     public ListNode reverseBetween(ListNode head, int m, int n) {
@@ -15,10 +16,11 @@ class Solution {
         head = pre.next;
         for (int i = m; i < n; i++) {
             ListNode nex = head.next;
-            // head 把nex节点后的 链表连接起来
+            // head 把nex节点后的 链表连接起来,相当于 head后移一位
             head.next = nex.next;
-            // nex插入到pre后面
+            // nex节点插入到pre后面，即nex节点移动到反转部分的头部
             nex.next = pre.next;
+            // pre 保持不变，作为反转部分的前驱
             pre.next = nex;
         }
         return dummy.next;
@@ -51,3 +53,4 @@ class Solution:
         
         return dummy.next
 ```
+start,tail

@@ -8,7 +8,6 @@
     - set(key, value)：将记录 (key, value) 插入该结构，缓存满时，将最久未使用的数据淘汰掉
     - get(key)：返回key 对应的value值
   - 实现
-    - 
 
 - LFU     
     - Least Frequently Used ，最近最少使用算法   
@@ -21,3 +20,5 @@
 
 - FIFO     
     First In First Out，先进先出的队列
+
+
