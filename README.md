@@ -1,6 +1,48 @@
 [toc]
 
 
+## codetop统计   
+### 二叉树    
+
+- 144, JD-
+- 94, JD-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 一、基础
 
@@ -39,22 +81,6 @@
 |       |           |           |
 |       |           |           |
 |       |           |           |
-
-
-
-
-
-### 常见排序
-
-|   名称   |                          Solution1                           |                          Solution2                           |
-| :------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 快速排序 | [java](D:\codes\Repositories\Algorithms-camp\18-Sort\all-sorts\QuickSort\QuickSort1.java) | [py](D:\codes\Repositories\Algorithms-camp\18-Sort\all-sorts\QuickSort\solution1.py) |
-| 冒泡排序 |                                                              |                                                              |
-| 选择排序 |                                                              |                                                              |
-| 插入排序 |                                                              |                                                              |
-|          |                                                              |                                                              |
-
-
 
 
 
@@ -102,6 +128,16 @@
 
 - Stack实现了Vector接口
 - Vector虽然线程安全，但效率太低
+
+
+
+总之：
+
+- 频繁的插入、删除操作：LinkedList
+- 频繁的随机访问操作：ArrayDeque，基于数组，随机访问O(1)
+- 未知的初始数据量：LinkedList，因为ArrayDeque需要扩容，性能降低
+
+
 
 
 
