@@ -3,19 +3,21 @@
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
+        if (root == null) return res;
+        
         TreeNode cur = root;
+        Deque<TreeNode> stack = new LinkedList<>();
 
         while (cur != null || !stack.isEmpty()) {
-            if (cur != null) {
+            while (cur != null) {
                 stack.push(cur);
                 cur = cur.left;
-            }  else {
-                cur = stack.pop();
-                res.add(cur.val);
-                cur = cur.right;
             }
+            cur = stack.pop();
+            res.add(cur.val);
+            cur = cur.right;
         }
+
         return res;
     }
 }

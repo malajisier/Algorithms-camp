@@ -1,29 +1,36 @@
-#### 法一：严格按照后序遍历的访问顺序实现
+### 法一：迭代法    
 
-写的非常好，推荐  
 ```java
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> s = new Stack<>();
-        Set<TreeNode> traversal = new HashSet<>();  // 存放遍历过的元素
+        LinkedList<Integer> res = new LinkedList<>();
+        if (root == null) return res;
+        
+        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode pre = null;
 
-        while (root != null || !s.isEmpty()) {
-            if (root == null && traversal.contains(s.peek())) {
-                res.add(s.pop().val);
-            } else if (root == null) {
-                traversal.add(s.peek());
-                root = s.peek().right;
-            } else {
-                s.push(root);  // 先添加左子树
+        while (root != null || !stack.isEmpty()) {
+            // 走到左下节点
+            while (root != null) {
+                stack.push(root);
                 root = root.left;
+            }
+            root = stack.pop();
+
+            // 遍历最左节点的右子树
+            if (root.right != null && root.right != pre) {
+                stack.push(root);  // 重复压栈，记录分叉路径节点
+                root = root.right;
+            } else {
+                res.add(root.val); // 当前节点的 左右子树都完成访问
+                pre = root;        // 记录当前节点，方便下一步对比
+                root = null;       // 重置root，避免重复访问左子树
             }
         }
         return res;
     }
 }
-```
-
+```   
 
 ```python
 class TreeNode:
