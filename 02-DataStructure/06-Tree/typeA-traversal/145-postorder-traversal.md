@@ -1,4 +1,6 @@
-### 法一：迭代法    
+### 法一：迭代法     
+- 按照严格的 左右中遍历顺序，
+ 
 
 ```java
 class Solution {
@@ -39,7 +41,6 @@ class TreeNode:
         self.left = left
         self.right = right
         
-# 严格的 左右中遍历顺序
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         if not root: return []
