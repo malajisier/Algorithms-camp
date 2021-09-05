@@ -29,7 +29,8 @@ class Solution {
 
 
 
-### 法二：中点截两段+逆序后半段+合并  
+### 法二：中点截两段+逆序后半段+合并   
+- 
 ```java
 class Solution {
     public void reorderList(ListNode head) {
@@ -58,6 +59,7 @@ class Solution {
             sideHead = tmp;
         } 
     }
+
     private ListNode reverseList(ListNode head) {
             if (head == null) {
                 return null;

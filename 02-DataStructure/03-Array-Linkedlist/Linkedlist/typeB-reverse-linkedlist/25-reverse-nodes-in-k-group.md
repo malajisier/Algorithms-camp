@@ -65,12 +65,13 @@ class Solution {
             ListNode head1 = pre.next;
             // 开始反转
             while (pre.next != tail) {
-                // cur 即head1
+                // cur 首先是head1，指向从头开始 每个待插到尾部的元素
                 ListNode cur = pre.next;
-                // pre 接上head1 后面的k-1链表
+                // 因为要把head1插到尾部，所以pre 需要接上head1 后面的剩余链表
                 pre.next = cur.next;
                 // cur 插到尾部，指向下一组链表 的head2(tail.next)
                 cur.next = tail.next;
+                // 尾部的元素 更新为cur
                 tail.next = cur;
             }
             // head1翻转后 就在最后一位，即第二组head2 的pre
