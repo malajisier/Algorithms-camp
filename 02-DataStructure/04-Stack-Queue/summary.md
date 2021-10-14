@@ -34,12 +34,24 @@ https://blog.csdn.net/weixin_42091177/article/details/112734703
     Character.isDigit(str.charAt(i))
     ```
   
-    
+
+
+
+
+
+
+
+
+
+
 
 
 
 ### 2. Queue   
 先入先出；添加、删除均为O(1)，查询为O(n)
+
+- 顺序队列：数组实现的
+- 链式队列：链表实现
 
 
 
@@ -47,6 +59,59 @@ https://blog.csdn.net/weixin_42091177/article/details/112734703
 - poll: 弹出队列的首个元素，如果队列为空，返回null
 - peek: 查看队列的首个元素，如果队列为空，返回null
 - element：查看队列的首个元素，如果队列为空，抛出异常NoSuchElementException
+
+
+
+```java
+// 数组实现
+public class ArrayQueue {
+    private String[] items;
+    private int n = 0;
+    private int head = 0;
+    private int tail = 0;
+    
+    
+    public ArrayQueue(int capacity) {
+        items = new String[capacity];
+        n = capacity;
+    }
+    
+    public boolean enqueue(String item) {
+        if (tail == n) return false;
+        items[tail++] = item;
+        return true;
+    }
+    
+    public String dequeue() {
+        if (head == tail) return false;
+        String ret = items[head++];
+        return ret;
+    }
+}
+
+
+// 优化一：数据搬迁
+// 频繁删除导致数组的不连续，但当每次出队都进行搬迁，时间复杂度会变为O(n)
+// 只需要在没有空闲空间时，触发一次数据搬迁即可
+public boolean enqueue(String item) {
+    if (tail == n) {
+        // 整个队列都已占满
+        if (head == 0) return false;
+        for (int i = head; i < tail; i++) {
+            items[i - head] = items[i];
+        }
+        tail -= head;
+        head = 0;
+    }
+    
+    items[tail++] = item;
+    return true;
+}
+```
+
+
+
+
 
 
 

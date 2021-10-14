@@ -10,7 +10,6 @@ class Solution {
         for (char c : T.toCharArray()) {
             rec[c - 'a']++;
         }
-        //System.out.println(Arrays.toString(rec));
 
         // 遍历S 中也存在于T 的字符，把该字符全部加入
         for (char c : S.toCharArray()) {

@@ -15,7 +15,7 @@ class BinarySearchImpl {
             return recBinarySearch(arr, key, low, middle - 1);
         } else if (arr[middle] < key) {
             return recBinarySearch(arr, key, middle + 1, high);
-        } else {
+        } else { 
             return middle;
         }
     }

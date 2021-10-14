@@ -1,3 +1,4 @@
+```python
 # 动态规划解法一：使用二维数组保存每个位置的状态 
 # TC:O(mn), SC:O(mn)
 # 注意：m是列, n是行  
@@ -23,3 +24,4 @@ class Solution:
                 cur[j] += cur[j - 1]
 
         return cur[n - 1]
+```
