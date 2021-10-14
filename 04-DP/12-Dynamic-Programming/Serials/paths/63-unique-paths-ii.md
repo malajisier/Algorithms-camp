@@ -1,5 +1,5 @@
-# DP：使用二维数组，TC:O(m*n), SC:O(1)
-
+```python
+# TC:O(m*n), SC:O(1)
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         # m是行，n是列
@@ -7,7 +7,6 @@ class Solution:
         n = len(obstacleGrid[0])
 
         if obstacleGrid[0][0] == 1: return 0
-
         obstacleGrid[0][0] = 1
 
         # 第一列填值，前面没有障碍物的置为1，障碍物置为0，障碍物之后置为0
@@ -27,3 +26,4 @@ class Solution:
                     obstacleGrid[i][j] = 0
         
         return obstacleGrid[m - 1][n - 1]
+```

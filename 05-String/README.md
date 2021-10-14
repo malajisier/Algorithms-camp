@@ -5,4 +5,12 @@
 - 
 
 
+#### 注意点：  
+1、输入时的问题    
+- 当输入数据有三行时，第一行数字，第二三行字符串
+- Scanner类在 nextInt()后 输入的 nextLine()无效     
+
+```java
+Scanner sc = new Scanner(Systenm)
+
 
