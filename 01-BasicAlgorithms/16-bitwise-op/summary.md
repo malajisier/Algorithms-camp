@@ -20,4 +20,8 @@
 
 (4) x&-x ==> 得到最低位的1    
 
-(5) x&~x=>0   
+(5) x&~x=>0     
+
+
+按位与运算：
+https://blog.csdn.net/weixin_41013322/article/details/106146793
