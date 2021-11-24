@@ -3,6 +3,8 @@
 
 ```java
 // 常用方法： addLast(), removeLast()
+//栈只能操作栈顶元素
+
 class CQueue {
     LinkedList<Integer> stack_in, stack_out;
 
