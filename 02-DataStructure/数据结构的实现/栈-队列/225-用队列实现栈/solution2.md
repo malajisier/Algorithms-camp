@@ -1,5 +1,4 @@
-两个队列的实现，
-
+两个队列的实现  
 ```python
 class MyStack:
     def __init__(self):

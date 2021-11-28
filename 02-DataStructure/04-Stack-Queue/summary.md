@@ -3,9 +3,29 @@
 
 
 
-- Java提供的栈
-  - Queue以及Deque都是继承于Collection，Deque是Queue的子接口
-  - Queue有一个直接子类PriorityQueue，而Deque中直接子类有两个：ArrayDeque, LinkedList。LinkedList 又是List的子类
+Java提供的栈
+- Queue 和Deque都是继承于Collection，Deque是Queue的子接口
+- Queue有一个直接子类PriorityQueue，而Deque中直接子类有两个：ArrayDeque, LinkedList。LinkedList 又是List的子类     
+
+
+PriorityQueue方法：  
+- 插入：
+  - add(E e)：插入失败 抛出异常
+  - offer(E e)：插入失败返回false
+- 删除队首：
+  - remove(): 失败抛出异常
+  - poll(): 失败返回null
+- remove(Object o):
+  删除与 o相等的元素，即使有多个相等，也只删一个
+- 获取队首元素：
+  - element(): 失败 抛出异常
+  - peek(): 失败返回null
+- 
+
+
+
+
+
 
 References:
 https://blog.csdn.net/weixin_42091177/article/details/112734703    
