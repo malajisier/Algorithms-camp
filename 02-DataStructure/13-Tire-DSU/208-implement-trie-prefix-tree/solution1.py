@@ -33,9 +33,6 @@ class Trie:
 
 
     def startsWith(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie that starts with the given prefix.
-        """
         node = self.root
         for letter in prefix:
             if letter not in node:
