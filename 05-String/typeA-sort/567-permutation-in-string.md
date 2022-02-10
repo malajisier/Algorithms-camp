@@ -1,4 +1,4 @@
-### 法一：滑动窗口
+### 法一：滑动窗口 + 模拟字典
 参考：https://leetcode-cn.com/problems/permutation-in-string/solution/zi-fu-chuan-de-pai-lie-by-leetcode-q6tp/
 
 ```java
@@ -37,5 +37,4 @@ class Solution {
         return false;
     }
 }
-
 ```
